@@ -13,7 +13,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_Otojk93AEeK0prILCroZjw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_OtUagN3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//LEGOSAR%20System"/>
+    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//LEGOSARSystem"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OtUagd3AEeK0prILCroZjw" x="185" y="-470" width="133"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_Z1JqkN3AEeK0prILCroZjw" type="1001">
@@ -253,7 +253,7 @@
       <styles xmi:type="notation:FilteringStyle" xmi:id="_uqtGs93MEeK0prILCroZjw"/>
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_uqpcUd3MEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
-    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//OSEK%20System"/>
+    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//OSEKSystem"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_uqpcUt3MEeK0prILCroZjw" x="-134" y="-75"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_eGQAcN3NEeK0prILCroZjw" type="1001">
@@ -401,7 +401,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_s68Psd3AEeK0prILCroZjw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_s68Pst3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//LEGOSAR%20System/system_hw"/>
+    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//LEGOSARSystem/system_hw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_s68Ps93AEeK0prILCroZjw" points="[-27, 0, 49, -47]$[-82, 0, -6, -47]$[-82, 47, -6, 0]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7trwN3AEeK0prILCroZjw" id="(0.21052631578947367,0.6976744186046512)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7trwd3AEeK0prILCroZjw" id="(0.5686274509803921,0.023255813953488372)"/>
@@ -415,7 +415,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_DYv5gd3BEeK0prILCroZjw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_DYv5gt3BEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//LEGOSAR%20System/system_sw"/>
+    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//LEGOSARSystem/system_sw"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_DYv5g93BEeK0prILCroZjw" points="[26, 10, -54, -65]$[80, 10, 0, -65]$[80, 55, 0, -20]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_DY0K8N3BEeK0prILCroZjw" id="(0.8045112781954887,0.5116279069767442)"/>
   </edges>
@@ -511,7 +511,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_2Xf90d3NEeK0prILCroZjw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_2Xf90t3NEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//OSEK%20System/osek_tasks"/>
+    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//OSEKSystem/osek_tasks"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_2Xf9093NEeK0prILCroZjw" points="[-6, 21, -6, -98]$[-6, 95, -6, -24]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_gprxEN3OEeK0prILCroZjw" id="(0.7156862745098039,0.8604651162790697)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_hZh5oN3OEeK0prILCroZjw" id="(0.5524475524475524,0.014705882352941176)"/>
@@ -538,7 +538,7 @@
     </children>
     <styles xmi:type="notation:ConnectorStyle" xmi:id="_cdscUd3PEeK0prILCroZjw" lineColor="4210752"/>
     <styles xmi:type="notation:FontStyle" xmi:id="_cdscUt3PEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
-    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//OSEK%20System/osek_events"/>
+    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//OSEKSystem/osek_events"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_cdscU93PEeK0prILCroZjw" points="[5, 0, -86, -99]$[91, 0, 0, -99]$[91, 93, 0, -6]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_cdxU0N3PEeK0prILCroZjw" id="(0.9509803921568627,0.5581395348837209)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_jQ09AN3PEeK0prILCroZjw" id="(0.2847682119205298,0.13725490196078433)"/>

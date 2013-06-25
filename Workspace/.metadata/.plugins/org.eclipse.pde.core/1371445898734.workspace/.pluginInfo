@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map>
+	<bundle bundleID="561" class="LEGOSAR.model.legosar.provider.LEGOSAREditPlugin$Implementation" localization="plugin" name="%pluginName" project="LEGOSAR.edit" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="562" class="LEGOSAR.model.legosar.presentation.LEGOSAREditorPlugin$Implementation" localization="plugin" name="%pluginName" project="LEGOSAR.editor" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="563" localization="plugin" name="%pluginName" project="LEGOSAR.tests" provider="%providerName">
+		<library name="."/>
+	</bundle>
+	<bundle bundleID="556" localization="plugin" name="%pluginName" project="LEGOSAR" provider="%providerName">
+		<library name="."/>
+	</bundle>
+</map>

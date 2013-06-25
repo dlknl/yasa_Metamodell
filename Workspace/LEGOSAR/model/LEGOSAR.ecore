@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="legosar" nsURI="http://legosar/1.0" nsPrefix="legosar">
-  <eClassifiers xsi:type="ecore:EClass" name="LEGOSAR System">
+  <eClassifiers xsi:type="ecore:EClass" name="LEGOSARSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="system_hw" lowerBound="1"
         eType="#//Hardware" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="system_sw" lowerBound="1"
@@ -23,9 +23,9 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="brick_bt_addr" upperBound="255"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="brick_peripherals" upperBound="-1"
-        eType="#//Peripheral"/>
+        eType="#//Peripheral" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="brick_osek" lowerBound="1"
-        eType="#//OSEK%20System" containment="true"/>
+        eType="#//OSEKSystem" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="brick_swcs" upperBound="-1"
         eType="#//SWC"/>
   </eClassifiers>
@@ -58,7 +58,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="SenderReceiverPort" eSuperTypes="#//Port">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port_datatype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OSEK System">
+  <eClassifiers xsi:type="ecore:EClass" name="OSEKSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="osek_tasks" lowerBound="1"
         upperBound="-1" eType="#//Task" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="osek_events" upperBound="-1"

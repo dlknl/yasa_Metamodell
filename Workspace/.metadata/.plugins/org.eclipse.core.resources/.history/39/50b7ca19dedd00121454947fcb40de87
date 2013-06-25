@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/LEGOSAR/src" modelPluginID="LEGOSAR" modelName="LEGOSAR"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>LEGOSAR.ecore</foreignModel>
+  <genPackages prefix="Legosar" disposableProviderFactory="true" ecorePackage="LEGOSAR.ecore#/">
+    <genClasses ecoreClass="LEGOSAR.ecore#//LEGOSARSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//LEGOSARSystem/system_hw"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//LEGOSARSystem/system_sw"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Hardware">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Hardware/hw_bricks"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Software">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Software/sw_swcs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Software/sw_connections"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Brick">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Brick/brick_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Brick/brick_isMaster"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Brick/brick_bt_addr"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Brick/brick_peripherals"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Brick/brick_osek"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Brick/brick_swcs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LEGOSAR.ecore#//Peripheral"/>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Motor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Motor/motor_port"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Sensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Sensor/sensor_port"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//SWC">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//SWC/swc_name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//SWC/swc_ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//SWC/swc_runnables"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Connection">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Connection/conn_name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Connection/conn_source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Connection/conn_destinations"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="LEGOSAR.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Port/port_name"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//TriggerPort"/>
+    <genClasses ecoreClass="LEGOSAR.ecore#//SenderReceiverPort">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//SenderReceiverPort/port_datatype"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//OSEKSystem">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//OSEKSystem/osek_tasks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//OSEKSystem/osek_events"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Task">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Task/task_name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Task/task_priority"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Task/task_alarm"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Alarm">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Alarm/alarm_cycletime"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Event">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Event/event_name"/>
+    </genClasses>
+    <genClasses ecoreClass="LEGOSAR.ecore#//Runnable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute LEGOSAR.ecore#//Runnable/runnable_name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Runnable/runnable_events"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference LEGOSAR.ecore#//Runnable/runnable_task"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
