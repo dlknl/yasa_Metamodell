@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="legosar" nsURI="http://legosar/1.0" nsPrefix="legosar">
+  <eClassifiers xsi:type="ecore:EClass" name="LEGOSAR System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system_hw" lowerBound="1"
+        eType="#//Hardware" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system_sw" lowerBound="1"
+        eType="#//Software" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hardware">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hw_bricks" lowerBound="1"
+        upperBound="-1" eType="#//Brick" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Software"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Brick">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brick_name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brick_isMaster" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brick_bt_addr" upperBound="255"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EByteArray"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brick_peripherals" upperBound="-1"
+        eType="#//Peripheral"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Peripheral" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Motor" eSuperTypes="#//Peripheral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="motor_port" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EChar"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Peripheral">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sensor_port" lowerBound="1"
+        upperBound="4" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SWC"/>
+</ecore:EPackage>

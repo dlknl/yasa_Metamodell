@@ -1,0 +1,14 @@
+INDEX VERSION 1.126+C:\Users\Reinhard\Documents\GitHub\yasa_Metamodell\Workspace\.metadata\.plugins\org.eclipse.jdt.core
+930023321.index
+4877740.index
+2188485776.index
+1316543622.index
+3954887126.index
+1052634586.index
+3561964232.index
+3716801328.index
+2065669765.index
+2378294736.index
+2330050834.index
+1755282778.index
+149691187.index

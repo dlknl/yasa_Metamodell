@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_ILEOcN3AEeK0prILCroZjw" type="EcoreTools" name="LEGOSAR" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_OtTzcN3AEeK0prILCroZjw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_OtW2wN3AEeK0prILCroZjw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_OtnVcN3AEeK0prILCroZjw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_OtnVcd3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_OtnVct3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_OtnVc93AEeK0prILCroZjw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_OtojkN3AEeK0prILCroZjw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Otojkd3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Otojkt3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Otojk93AEeK0prILCroZjw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_OtUagN3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//LEGOSAR%20System"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_OtUagd3AEeK0prILCroZjw" x="260" y="55" width="133"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_Z1JqkN3AEeK0prILCroZjw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_Z1KRoN3AEeK0prILCroZjw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_Z1KRod3AEeK0prILCroZjw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Z1KRot3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Z1KRo93AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Z1KRpN3AEeK0prILCroZjw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_Z1K4sN3AEeK0prILCroZjw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_Z1K4sd3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_Z1K4st3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_Z1K4s93AEeK0prILCroZjw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_Z1Jqkd3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//Hardware"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Z1Jqkt3AEeK0prILCroZjw" x="155" y="130"/>
+  </children>
+  <children xmi:type="notation:Node" xmi:id="_ajq9cN3AEeK0prILCroZjw" type="1001">
+    <children xmi:type="notation:Node" xmi:id="_ajrkgN3AEeK0prILCroZjw" type="4001"/>
+    <children xmi:type="notation:Node" xmi:id="_ajrkgd3AEeK0prILCroZjw" type="5001">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ajrkgt3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ajrkg93AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ajrkhN3AEeK0prILCroZjw"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_ajsLkN3AEeK0prILCroZjw" type="5002">
+      <styles xmi:type="notation:DrawerStyle" xmi:id="_ajsLkd3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_ajsLkt3AEeK0prILCroZjw"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_ajsLk93AEeK0prILCroZjw"/>
+    </children>
+    <styles xmi:type="notation:ShapeStyle" xmi:id="_ajq9cd3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
+    <element xmi:type="ecore:EClass" href="LEGOSAR.ecore#//Software"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ajq9ct3AEeK0prILCroZjw" x="395" y="130"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ILEOcd3AEeK0prILCroZjw"/>
+  <element xmi:type="ecore:EPackage" href="LEGOSAR.ecore#/"/>
+  <edges xmi:type="notation:Edge" xmi:id="_s68PsN3AEeK0prILCroZjw" type="3002" source="_OtTzcN3AEeK0prILCroZjw" target="_Z1JqkN3AEeK0prILCroZjw">
+    <children xmi:type="notation:Node" xmi:id="_s7H14N3AEeK0prILCroZjw" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_s7H14d3AEeK0prILCroZjw" x="-47" y="-6"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_s7Ic8N3AEeK0prILCroZjw" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_s7Ic8d3AEeK0prILCroZjw" x="-2" y="11"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_s68Psd3AEeK0prILCroZjw" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_s68Pst3AEeK0prILCroZjw" fontColor="4210752" fontName="Segoe UI" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//LEGOSAR%20System/system_hw"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_s68Ps93AEeK0prILCroZjw" points="[-27, 0, 49, -47]$[-82, 0, -6, -47]$[-82, 47, -6, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7trwN3AEeK0prILCroZjw" id="(0.21052631578947367,0.6976744186046512)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_s7trwd3AEeK0prILCroZjw" id="(0.5686274509803921,0.023255813953488372)"/>
+  </edges>
+</notation:Diagram>
