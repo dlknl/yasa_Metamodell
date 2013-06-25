@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="Metamodell.model.metamodell.presentation.MetamodellModelWizardID"
+            name="%_UI_MetamodellModelWizard_label"
+            class="Metamodell.model.metamodell.presentation.MetamodellModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MetamodellModelFile.gif">
+         <description>%_UI_MetamodellModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <editor
+            id="Metamodell.model.metamodell.presentation.MetamodellEditorID"
+            name="%_UI_MetamodellEditor_label"
+            icon="icons/full/obj16/MetamodellModelFile.gif"
+            extensions="metamodell"
+            class="Metamodell.model.metamodell.presentation.MetamodellEditor"
+            contributorClass="Metamodell.model.metamodell.presentation.MetamodellActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

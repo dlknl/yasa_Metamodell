@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="metamodell" nsURI="http://metamodell/1.0" nsPrefix="metamodell">
+  <eClassifiers xsi:type="ecore:EClass" name="System">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system_hw" lowerBound="1"
+        eType="#//Hardware" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="system_sw" lowerBound="1"
+        eType="#//Software" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Hardware">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hw_bricks" lowerBound="1"
+        upperBound="-1" eType="#//Brick" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Software"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Brick">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brick_peripherals" upperBound="-1"
+        eType="#//Peripherie"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="brick_osek" lowerBound="1"
+        eType="#//OSEKSystem" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Peripherie" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Motor" eSuperTypes="#//Peripherie"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Sensor" eSuperTypes="#//Peripherie"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OSEKSystem">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="osek_tasks" upperBound="-1"
+        eType="#//Task" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="osek_events" upperBound="-1"
+        eType="#//Event" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Event"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Task">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="task_alarm" lowerBound="1"
+        eType="#//Alarm" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Alarm"/>
+</ecore:EPackage>
