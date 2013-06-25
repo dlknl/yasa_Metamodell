@@ -1,0 +1,160 @@
+// CHANGED SECTION BEGINS
+  	
+		// Create a new file output stream:
+		
+		FileOutputStream file_stream = null;
+		
+		// Filestream um in ein MAKEFILE zu schreiben
+		
+		FileOutputStream makefile_stream = null;
+		
+		
+		// Create a new print output stream:
+		
+		PrintStream print_stream = null;
+		
+		// Printstream um in ein MAKEFILE zu schreiben
+		
+		PrintStream printmakefile_stream = null;
+		
+// CHANGED SECTION ENDS
+.
+.
+.
+.
+// CHANGED SECTION BEGINS
+					
+		LEGOSAR_Metamodell.System myLEGOSAR = (LEGOSAR_Metamodell.System)resource.getContents().get(0);
+		
+		unsigned int brick_counter = 0;
+		
+		makefile_stream = new FileOutputStream("makefile");
+		
+		for(LEGOSAR_Metamodell.Brick brick : myLEGOSAR.getSystem_hw.getHw_bricks())
+		{
+			brick_counter++;
+			
+			// Makefile generieren
+			
+			try
+			{
+				
+				printmakefile_stream = new PrintStream(makefile_stream);
+				
+				print_stream.println("TARGET = LEGOSAR_Project");
+				print_stream.println("TARGET_SOURCES := Brick" + brick_counter + ".c");
+				print_stream.println("TOPPERS_OSEK_OIL_SOURCE := ./Brick"+ brick_counter +".oil");
+				print_stream.println("O_PATH ?= build");
+				print_stream.println("include ../../../nxtOSEK/ecrobot/ecrobot.mak");
+				
+			}
+			catch(Exception exception)
+			{
+				System.out.println("ERROR! Cannot create MAKEFILE file for brick " + brick_counter + "\n");
+				return;
+			}
+			
+			// OIL-File generieren
+			
+			try
+			{
+				file_stream = new FileOutputStream("Brick" + brick_counter + ".oil"); 
+			}
+			catch(Exception exception)
+			{
+				System.out.println("ERROR! Cannot create OIL file for brick " + brick_counter + "\n");
+				return;
+			}
+			
+			print_stream = new PrintStream(file_stream);
+			
+			try
+			{
+				
+					// Add default includes, CPU declaration and appmode to OIL file:
+		            
+		            print_stream.println("#include \"implementation.oil\"\n");
+		            
+		            print_stream.println("CPU ATMEL_AT91SAM7S256");
+		            print_stream.println("{");
+		            print_stream.println("\tOS LEJOS_OSEK");
+		            print_stream.println("\t{");
+		            print_stream.println("\t\tSTATUS = EXTENDED;");
+		            print_stream.println("\t\tSTARTUPHOOK = FALSE;");
+		            print_stream.println("\t\tERRORHOOK = FALSE;");
+		            print_stream.println("\t\tSHUTDOWNHOOK = FALSE;");
+		            print_stream.println("\t\tPRETASKHOOK = FALSE;");
+		            print_stream.println("\t\tPOSTTASKHOOK = FALSE;");
+		            print_stream.println("\t\tUSEGETSERVICEID = FALSE;");
+		            print_stream.println("\t\tUSEPARAMETERACCESS = FALSE;");
+		            print_stream.println("\t\tUSERESSCHEDULER = FALSE;");
+		            print_stream.println("\t};\n");
+		            
+		            print_stream.println("\tAPPMODE appmode1{};");
+		            
+		            // Tasks in die OIL-Datei schreiben
+		            
+		            for(LEGOSAR_Metamodell.Task task : brick.brick_osek.getOsek_tasks())
+		            {
+		            	print_stream.println("TASK " + task);
+		            	print_stream.println("{");
+		            	print_stream.println("AUTOSTART = FALSE;");
+		            	print_stream.println("PRIORITY = " + task.getTask_priority + ";");
+		            	print_stream.println("SCHEDULE = FULL;");
+		            	print_stream.println("STACKSIZE = 512;");
+		            	
+		            	/*Events die den Tasks zugeordnet werden sollen fehlen!*/
+		            	/*Oder Events den Runnables zuordnen?!*/
+		            	
+		            	print_stream.println("};");
+		            }
+		            
+		            // Events in die OIL-Datei schreiben
+		            
+		            for(LEGOSAR_Metamodell.Event event : brick.brick_swcs.swc_runnable.getRunnable_events())
+		            {
+		            	print_stream.println("EVENT" + event.getEvent_name());
+		            	print_stream.println("{");
+		            	print_stream.println("MASK = AUTO;");
+		            	print_stream.println("};");	
+		            }
+		            
+		            // Counter und Alarme in die OIL-Datei schreiben
+		            
+		            for (LEGOSAR_Metamodell.Alarm alarm : brick.brick_osek.osek_tasks.getTask_alarm())
+		            {
+		            	
+		            	// Counter erstellen mit name von counter_"alarm"
+		            	
+		            	print_stream.println("COUNTER counter_" + alarm);
+		            	print_stream.println("{");
+		            	print_stream.println("MINCYCLE=1;");
+		            	print_stream.println("MAXALLOWEDVALUE=10000;");
+		            	print_stream.println("TICKSPERBASE=1;");
+		            	print_stream.println("};");
+		            	
+		            	// Alarm erstellen
+		            	
+		            	print_stream.println("ALARM " + alarm);
+		            	print_stream.println("{");
+		            	print_stream.println("COUNTER = counter_" + alarm + ";");
+		            	print_stream.println("ACTION=ACTIVATETASK" + alarm + ";");
+		            	print_stream.println("{");
+		            	print_stream.println("TASK=" + /*Welche Task wird aktiviert?*/ + ";");
+		            	print_stream.println("};");
+		            	print_stream.println("AUTOSTART=TRUE");
+		            	print_stream.println("{");
+		            	print_stream.println("ALARMTIME=0;");
+		            	print_stream.println("CYCLETIME=" + alarm.getAlarm_cycletime() + ";");
+		            	print_stream.println("};");
+		            	print_stream.println("};");
+		            			            			            			                  	
+		            }           
+			}
+			catch(Exception exception)
+			{
+				System.out.println("Error: Cannot write to OIL file!");
+			}
+			
+		}
+// CHANGED SECTION ENDS
