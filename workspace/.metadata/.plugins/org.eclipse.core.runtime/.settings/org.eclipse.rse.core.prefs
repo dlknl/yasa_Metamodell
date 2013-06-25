@@ -1,4 +1,3 @@
-activeuserprofiles=RFHINF255;Team
+activeuserprofiles=Satellite;Team
 eclipse.preferences.version=1
-org.eclipse.rse.systemtype.local.systemType.defaultUserId=doc34804
-useridperkey=RFHINF255.Local\=doc34804;
+org.eclipse.rse.systemtype.local.systemType.defaultUserId=Reinhard
