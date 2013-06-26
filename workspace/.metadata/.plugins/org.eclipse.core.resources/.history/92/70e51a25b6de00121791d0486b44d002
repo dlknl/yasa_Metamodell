@@ -169,41 +169,7 @@ public class MetamodellExample {
 		            
 		            print_stream.println("\tAPPMODE appmode1{};");
 		            
-		         // TASKS --------------------------------------------------------------------------------
-		            unsigned int task_counter = 0;
 		            
-		            for(LEGOSAR_Metamodell.Task task : myLEGOSAR.getTasks)
-		            {
-		            	task_counter++;
-		            	
-		            	print_stream.println("TASK" + "Task" + task_counter + " {");
-		            	print_stream.println("\tPRIORITY=" + getTask_Priority + ";");
-		            	print_stream.println("\tSCHEDULE = NON;");
-		            	print_stream.println("\tACTIVATION = 1;");
-		            	print_stream.println("\tAUTOSTART = TRUE {");
-		            	print_stream.println("\t\tAPPMODE = AppMode1;");
-		            	print_stream.println("\t};");
-		            	print_stream.println("\tEVENT = " + getEvent + ";");
-		            	print_stream.println("};");
-		            }
-		            
-		            
-		         // ALARMS --------------------------------------------------------------------------------
-		            unsigned int alarm_counter = 0;
-		            
-		            for(LEGOSAR_Metamodell.Alarm alarm : myLEGOSAR.getAlarm)
-		            {
-		            	alarm_counter++;
-		            	
-		            	print_stream.println("ALARM" + "Alarm" + AlarmName + " {");
-		            	print_stream.println("\tCOUNTER =" + getTask_Priority + ";");
-		            	print_stream.println("\tACTION = SETEVENT {");
-		            	print_stream.println("\t\tTASK = " + getTask + ";");
-		            	print_stream.println("\t\tEVENT = " + getEvent + ";");
-		            	print_stream.println("\t};");
-		            	print_stream.println("\tAUTOSTART = FALSE;");
-		            	print_stream.println("};");
-		            }
 			}
 			catch(Exception exception)
 			{
