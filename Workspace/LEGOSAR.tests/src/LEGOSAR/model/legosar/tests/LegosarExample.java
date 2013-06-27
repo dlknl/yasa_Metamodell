@@ -23,21 +23,69 @@ import org.eclipse.emf.ecore.util.Diagnostician;
 
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
+//CHANGED SECTION BEGINS
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+//CHANGED SECTION ENDS
+
+//CHANGED SECTION BEGINS
+
+//Note that all '@generated' tags of modified classes and methods have been removed!
+
+//CHANGED SECTION ENDS
+
 /**
  * <!-- begin-user-doc -->
  * A sample utility for the '<em><b>legosar</b></em>' package.
  * <!-- end-user-doc -->
- * @generated
  */
 public class LegosarExample {
+	
+	// CHANGED SECTION BEGINS
+	
+	private static FileOutputStream file_stream;
+	private static PrintStream print_stream;
+	
+	private static void writeLineToFile(int indent, String line)
+	{
+		try
+		{
+			for(int i = 0; i < indent; i++)
+			{
+				// Note that in this case print() is used instead of println()!
+				
+				print_stream.print("\t");
+			}
+		
+			if(line == "\n")
+				print_stream.print("\n");
+			else
+				print_stream.println(line);
+			
+			// Note that a new line character is inserted automatically!
+		}
+		catch(Exception exception)
+		{
+			System.out.println("ERROR! Can't write to file!\n");
+			System.out.println("WARNING: Output directory may contain unusable files!");
+			System.exit(-1);
+		}
+		
+			return;
+	}
+		
+	// CHANGED SECTION ENDS
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * Load all the argument file paths or URIs as instances of the model.
 	 * <!-- end-user-doc -->
 	 * @param args the file paths or URIs.
-	 * @generated
 	 */
 	public static void main(String[] args) {
+		
 		// Create a resource set to hold the resources.
 		//
 		ResourceSet resourceSet = new ResourceSetImpl();
@@ -93,6 +141,99 @@ public class LegosarExample {
 							printDiagnostic(diagnostic, "");
 						}
 					}
+					
+					// CHANGED SECTION BEGINS
+					
+					// Get the resources of the loaded model and create the entry point for model iteration.
+					//
+					LEGOSARSystem myLEGOSAR = (LEGOSARSystem)resource.getContents().get(0);
+					
+					// OIL FILE GENERATION:
+					
+					for(LEGOSAR.model.legosar.Brick brick : myLEGOSAR.getSystem_hw().getHw_bricks())
+					{
+						System.out.println("Beginning Brick '" + brick.getBrick_name() + "'...\n");
+						
+						try
+						{
+							System.out.println("Creating OIL file for Brick'" + brick.getBrick_name() + "'...\n");
+							
+							// Create new OIL file.
+							//
+							file_stream = new FileOutputStream("C:\\LEGOSAR\\" + brick.getBrick_name() + ".oil");
+							
+							// Create a new print stream connected to the file output stream.
+							//
+							print_stream = new PrintStream(file_stream);
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't create OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							System.exit(-1);
+						}
+						
+						try
+						{
+							System.out.println("Generating standard OIL header for Brick '" + brick.getBrick_name() + "'!\n");
+							
+							// Write default includes, CPU declaration and appmode to OIL file.
+							//
+							writeLineToFile(0,"#include \"implementation.oil\"");
+							writeLineToFile(0,"\n");
+							writeLineToFile(0,"CPU ATMEL_AT91SAM7S256");
+							writeLineToFile(0,"{");
+							writeLineToFile(1,"OS LEJOS_OSEK");
+							writeLineToFile(1,"{");
+							writeLineToFile(2,"STATUS = EXTENDED;");
+							writeLineToFile(2,"STARTUPHOOK = FALSE;");
+							writeLineToFile(2,"ERRORHOOK = FALSE;");
+							writeLineToFile(2,"SHUTDOWNHOOK = FALSE;");
+							writeLineToFile(2,"PRETASKHOOK = FALSE;");
+							writeLineToFile(2,"POSTTASKHOOK = FALSE;");
+							writeLineToFile(2,"USEGETSERVICEID = FALSE;");
+							writeLineToFile(2,"USEPARAMETERACCESS = FALSE;");
+							writeLineToFile(2,"USERESSCHEDULER = FALSE;");
+							writeLineToFile(1,"};");
+							writeLineToFile(0,"\n");
+							writeLineToFile(1,"APPMODE appmode1{};");
+							writeLineToFile(0,"\n");
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't write standard OIL header to OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							System.exit(-1);
+						}
+						
+						System.out.println("Generating OSEK elements for Brick '" + brick.getBrick_name() + "'...\n");
+						
+						for(LEGOSAR.model.legosar.Event event : brick.getBrick_osek().getOsek_events()) 
+						{
+							try
+							{	
+								System.out.println("Generating Event '" + event.getEvent_name() + "'...\n");
+								
+								// Write event declaration to OIL file.
+								//
+								writeLineToFile(1,"EVENT " + event.getEvent_name());
+								writeLineToFile(1,"{");
+								writeLineToFile(2,"MASK = AUTO;");
+								writeLineToFile(1,"};");
+								writeLineToFile(0,"\n");
+							}
+							catch(Exception exception)
+							{
+								System.out.println("ERROR! Can't write event '" + event.getEvent_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+								System.out.println("WARNING: Output directory may contain unusable files!");
+								System.exit(-1);
+							}
+						}
+						
+						System.out.println("Finished Brick '" + brick.getBrick_name() + "'...\n");
+					}
+							
+					// CHANGED SECTION ENDS	
 				}
 				catch (RuntimeException exception) {
 					System.out.println("Problem loading " + uri);

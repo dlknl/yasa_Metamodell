@@ -6,10 +6,10 @@
 	<bundle bundleID="562" class="LEGOSAR.model.legosar.presentation.LEGOSAREditorPlugin$Implementation" localization="plugin" name="%pluginName" project="LEGOSAR.editor" provider="%providerName">
 		<library name="."/>
 	</bundle>
-	<bundle bundleID="563" localization="plugin" name="%pluginName" project="LEGOSAR.tests" provider="%providerName">
+	<bundle bundleID="556" localization="plugin" name="%pluginName" project="LEGOSAR" provider="%providerName">
 		<library name="."/>
 	</bundle>
-	<bundle bundleID="556" localization="plugin" name="%pluginName" project="LEGOSAR" provider="%providerName">
+	<bundle bundleID="563" localization="plugin" name="%pluginName" project="LEGOSAR.tests" provider="%providerName">
 		<library name="."/>
 	</bundle>
 </map>

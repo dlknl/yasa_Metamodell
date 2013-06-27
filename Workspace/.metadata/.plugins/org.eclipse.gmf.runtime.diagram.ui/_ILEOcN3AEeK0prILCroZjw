@@ -1,4 +1,4 @@
-#Tue Jun 25 22:39:51 CEST 2013
+#Tue Jun 25 23:56:27 CEST 2013
 viewport.x=-320
 zoom=1.0
 print.margin.right=0.5
@@ -7,20 +7,20 @@ print.useDiagramSettings=true
 rulergrid.snaptogrid=true
 print.page.size=A4
 print.margin.left=0.5
-viewpagebreaks=false
 print.page.width=8.267716535433072
-pagebreak.y=-513
+viewpagebreaks=false
+pagebreak.y=0
 rulergrid.gridspacing=0.125
-pagebreak.x=-348
+pagebreak.x=0
 rulergrid.viewgrid=false
 print.page.height=11.692913385826772
 rulergrid.gridlinecolor=12632256
-print.margin.bottom=0.5
 rulergrid.gridlinestyle=6
+print.margin.bottom=0.5
 rulergrid.gridlevel=true
 print.margin.top=0.5
 print.useLandscape=true
-rulergrid.viewrulers=false
 print.useMillim=true
+rulergrid.viewrulers=false
 print.usePortrait=false
 viewport.y=-478

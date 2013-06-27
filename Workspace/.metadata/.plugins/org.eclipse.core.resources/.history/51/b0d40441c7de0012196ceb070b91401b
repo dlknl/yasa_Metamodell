@@ -1,0 +1,272 @@
+/**
+ */
+package LEGOSAR.model.legosar.tests;
+
+import LEGOSAR.model.legosar.LEGOSARSystem;
+import LEGOSAR.model.legosar.LegosarFactory;
+import LEGOSAR.model.legosar.LegosarPackage;
+
+import java.io.File;
+import java.io.IOException;
+
+import org.eclipse.emf.common.util.Diagnostic;
+import org.eclipse.emf.common.util.URI;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.resource.ResourceSet;
+
+import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+
+import org.eclipse.emf.ecore.util.Diagnostician;
+
+import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
+
+//CHANGED SECTION BEGINS
+
+import java.io.FileOutputStream;
+import java.io.PrintStream;
+
+//CHANGED SECTION ENDS
+
+//CHANGED SECTION BEGINS
+
+//Note that all '@generated' tags of modified classes and methods have been removed!
+
+//CHANGED SECTION ENDS
+
+/**
+ * <!-- begin-user-doc -->
+ * A sample utility for the '<em><b>legosar</b></em>' package.
+ * <!-- end-user-doc -->
+ */
+public class LegosarExample {
+	
+	// CHANGED SECTION BEGINS
+	
+	private static FileOutputStream file_stream;
+	private static PrintStream print_stream;
+	
+	private static void writeLineToFile(int indent, String line)
+	{
+		try
+		{
+			for(int i = 0; i < indent; i++)
+			{
+				print_stream.println("\t");
+			}
+		
+			print_stream.println(line);
+			
+			// Note that a new line character is inserted automatically!
+		}
+		catch(Exception exception)
+		{
+			System.out.println("ERROR! Can't write to file!\n");
+			System.out.println("WARNING: Output directory may contain unusable files!");
+			System.exit(-1);
+		}
+		
+			return;
+	}
+		
+	// CHANGED SECTION ENDS
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Load all the argument file paths or URIs as instances of the model.
+	 * <!-- end-user-doc -->
+	 * @param args the file paths or URIs.
+	 */
+	public static void main(String[] args) {
+		
+		// CHANGED SECTION BEGINS
+		
+		// Initialize file output stream to null.
+		//
+		file_stream = null;
+		
+		// Create a new print stream connected to the file output stream.
+		//
+		print_stream = new PrintStream(file_stream);
+		
+		// CHANGED SECTION ENDS
+		
+		// Create a resource set to hold the resources.
+		//
+		ResourceSet resourceSet = new ResourceSetImpl();
+		
+		// Register the appropriate resource factory to handle all file extensions.
+		//
+		resourceSet.getResourceFactoryRegistry().getExtensionToFactoryMap().put
+			(Resource.Factory.Registry.DEFAULT_EXTENSION, 
+			 new XMIResourceFactoryImpl());
+
+		// Register the package to ensure it is available during loading.
+		//
+		resourceSet.getPackageRegistry().put
+			(LegosarPackage.eNS_URI, 
+			 LegosarPackage.eINSTANCE);
+        
+		// If there are no arguments, emit an appropriate usage message.
+		//
+		if (args.length == 0) {
+			System.out.println("Enter a list of file paths or URIs that have content like this:");
+			try {
+				Resource resource = resourceSet.createResource(URI.createURI("http:///My.legosar"));
+				LEGOSARSystem root = LegosarFactory.eINSTANCE.createLEGOSARSystem();
+				resource.getContents().add(root);
+				resource.save(System.out, null);
+			}
+			catch (IOException exception) {
+				exception.printStackTrace();
+			}
+		}
+		else {
+			// Iterate over all the arguments.
+			//
+			for (int i = 0; i < args.length; ++i) {
+				// Construct the URI for the instance file.
+				// The argument is treated as a file path only if it denotes an existing file.
+				// Otherwise, it's directly treated as a URL.
+				//
+				File file = new File(args[i]);
+				URI uri = file.isFile() ? URI.createFileURI(file.getAbsolutePath()): URI.createURI(args[i]);
+
+				try {
+					// Demand load resource for this file.
+					//
+					Resource resource = resourceSet.getResource(uri, true);
+					System.out.println("Loaded " + uri);
+
+					// Validate the contents of the loaded resource.
+					//
+					for (EObject eObject : resource.getContents()) {
+						Diagnostic diagnostic = Diagnostician.INSTANCE.validate(eObject);
+						if (diagnostic.getSeverity() != Diagnostic.OK) {
+							printDiagnostic(diagnostic, "");
+						}
+					}
+					
+					// CHANGED SECTION BEGINS
+					
+					// Get the resources of the loaded model and create the entry point for model iteration.
+					//
+					LEGOSARSystem myLEGOSAR = (LEGOSARSystem)resource.getContents().get(0);
+					
+					// OIL FILE GENERATION:
+					
+					for(myLEGOSAR.Brick brick : myLEGOSAR.Hardware.GetBricks())
+					{
+						System.out.println("Beginning Brick '" + brick.getName() + "'...\n");
+						
+						try
+						{
+							System.out.println("Creating OIL file for Brick'" + brick.getName() + "'...\n");
+							
+							// Create new OIL file.
+							//
+							file_stream = FileOutputStream(brick.getName() + ".oil");
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't create OIL file for Brick '" + brick.getName() + "'!\n");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							return -1;
+						}
+						
+						try
+						{
+							System.out.println("Generating standard OIL header for Brick '" + brick.getName() + "'!\n");
+							
+							// Write default includes, CPU declaration and appmode to OIL file.
+							//
+							writeLineToFile(0,"#include \"implementation.oil\"");
+							writeLineToFile(0,"\n");
+							writeLineToFile(0,"CPU ATMEL_AT91SAM7S256");
+							writeLineToFile(0,"{");
+							writeLineToFile(1,"OS LEJOS_OSEK");
+							writeLineToFile(1,"{");
+							writeLineToFile(2,"STATUS = EXTENDED;");
+							writeLineToFile(2,"STARTUPHOOK = FALSE;");
+							writeLineToFile(2,"ERRORHOOK = FALSE;");
+							writeLineToFile(2,"SHUTDOWNHOOK = FALSE;");
+							writeLineToFile(2,"PRETASKHOOK = FALSE;");
+							writeLineToFile(2,"POSTTASKHOOK = FALSE;");
+							writeLineToFile(2,"USEGETSERVICEID = FALSE;");
+							writeLineToFile(2,"USEPARAMETERACCESS = FALSE;");
+							writeLineToFile(2,"USERESSCHEDULER = FALSE;");
+							writeLineToFile(1,"};");
+							writeLineToFile(0,"\n");
+							writeLineToFile(1,"APPMODE appmode1{};");
+							writeLineToFile(0,"\n");
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't write standard OIL header to OIL file for Brick '" + brick.getName() + "'!\n");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							return -1;
+						}
+						
+						try
+						{
+							System.out.println("Generating OSEK elements for Brick '" + brick.getName() + "'...\n");
+							
+							for(myLEGOSAR Event event : brick.brick_osek.getEvents())
+							{
+								System.out.println("Generating Event '" + event.getName() + "'...\n");
+								
+								// Write event declaration to OIL file.
+								//
+								writeLineToFile(1,"EVENT " + event.getName());
+								writeLineToFile(1,"{");
+								writeLineToFile(2,"MASK = AUTO;");
+								writeLineToFile(1,"};");
+								writeLineToFile(0,"\n");
+							}
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't write event '" + event.getName() + "' to OIL file for Brick '" + brick.getName() + "'!\n");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							return -1;
+						}
+					}
+							
+					// CHANGED SECTION ENDS
+					
+					
+					
+					
+					
+					
+					
+					
+					
+				}
+				catch (RuntimeException exception) {
+					System.out.println("Problem loading " + uri);
+					exception.printStackTrace();
+				}
+			}
+		}
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * Prints diagnostics with indentation.
+	 * <!-- end-user-doc -->
+	 * @param diagnostic the diagnostic to print.
+	 * @param indent the indentation for printing.
+	 * @generated
+	 */
+	protected static void printDiagnostic(Diagnostic diagnostic, String indent) {
+		System.out.print(indent);
+		System.out.println(diagnostic.getMessage());
+		for (Diagnostic child : diagnostic.getChildren()) {
+			printDiagnostic(child, indent + "  ");
+		}
+	}
+
+} //LegosarExample
