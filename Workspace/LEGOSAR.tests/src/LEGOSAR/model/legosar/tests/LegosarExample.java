@@ -68,7 +68,7 @@ public class LegosarExample {
 		}
 		catch(Exception exception)
 		{
-			System.out.println("ERROR! Can't write to file!\n");
+			System.out.println("ERROR! Can't write to file!");
 			System.out.println("WARNING: Output directory may contain unusable files!");
 			System.exit(-1);
 		}
@@ -152,11 +152,11 @@ public class LegosarExample {
 					
 					for(LEGOSAR.model.legosar.Brick brick : myLEGOSAR.getSystem_hw().getHw_bricks())
 					{
-						System.out.println("Beginning Brick '" + brick.getBrick_name() + "'...\n");
+						System.out.println("Beginning Brick '" + brick.getBrick_name() + "'...");
 						
 						try
 						{
-							System.out.println("Creating OIL file for Brick'" + brick.getBrick_name() + "'...\n");
+							System.out.println("Creating OIL file for Brick'" + brick.getBrick_name() + "'...");
 							
 							// Create new OIL file.
 							//
@@ -168,14 +168,14 @@ public class LegosarExample {
 						}
 						catch(Exception exception)
 						{
-							System.out.println("ERROR! Can't create OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+							System.out.println("ERROR! Can't create OIL file for Brick '" + brick.getBrick_name() + "'!");
 							System.out.println("WARNING: Output directory may contain unusable files!");
 							System.exit(-1);
 						}
 						
 						try
 						{
-							System.out.println("Generating standard OIL header for Brick '" + brick.getBrick_name() + "'!\n");
+							System.out.println("Generating standard OIL header for Brick '" + brick.getBrick_name() + "'!");
 							
 							// Write default includes, CPU declaration and appmode to OIL file.
 							//
@@ -197,40 +197,108 @@ public class LegosarExample {
 							writeLineToFile(1,"};");
 							writeLineToFile(0,"\n");
 							writeLineToFile(1,"APPMODE appmode1{};");
-							writeLineToFile(0,"\n");
 						}
 						catch(Exception exception)
 						{
-							System.out.println("ERROR! Can't write standard OIL header to OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+							System.out.println("ERROR! Can't write standard OIL header to OIL file for Brick '" + brick.getBrick_name() + "'!");
 							System.out.println("WARNING: Output directory may contain unusable files!");
 							System.exit(-1);
 						}
 						
-						System.out.println("Generating OSEK elements for Brick '" + brick.getBrick_name() + "'...\n");
+						System.out.println("Generating OSEK elements for Brick '" + brick.getBrick_name() + "'...");
 						
 						for(LEGOSAR.model.legosar.Event event : brick.getBrick_osek().getOsek_events()) 
 						{
 							try
 							{	
-								System.out.println("Generating Event '" + event.getEvent_name() + "'...\n");
+								System.out.println("Generating Event '" + event.getEvent_name() + "'...");
 								
 								// Write event declaration to OIL file.
 								//
+								writeLineToFile(0, "\n");
 								writeLineToFile(1,"EVENT " + event.getEvent_name());
 								writeLineToFile(1,"{");
 								writeLineToFile(2,"MASK = AUTO;");
 								writeLineToFile(1,"};");
-								writeLineToFile(0,"\n");
 							}
 							catch(Exception exception)
 							{
-								System.out.println("ERROR! Can't write event '" + event.getEvent_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!\n");
+								System.out.println("ERROR! Can't write event '" + event.getEvent_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!");
 								System.out.println("WARNING: Output directory may contain unusable files!");
 								System.exit(-1);
 							}
 						}
 						
-						System.out.println("Finished Brick '" + brick.getBrick_name() + "'...\n");
+						for(LEGOSAR.model.legosar.Task task : brick.getBrick_osek().getOsek_tasks())
+						{
+							try
+							{
+								System.out.println("Generating Task '" + task.getTask_name() + "'...");
+								
+								//Write task declaration to OIL file.
+								//
+								writeLineToFile(0, "\n");
+								writeLineToFile(1, "TASK " + task.getTask_name());
+								writeLineToFile(1, "{");
+								writeLineToFile(2, "AUTOSTART = FALSE;");
+								writeLineToFile(2, "PRIORITY = " + task.getTask_priority() + ";");
+								writeLineToFile(2, "ACTIVATION = 1;");
+								writeLineToFile(2, "SCHEDULE = FULL;");
+								writeLineToFile(2, "STACKSIZE = 512;");
+								
+								for(LEGOSAR.model.legosar.Event event : brick.getBrick_osek().getOsek_events())
+								{
+									System.out.println("Adding Event '" + event.getEvent_name() + "' to Task '" + task.getTask_name() + "'...");
+									
+									writeLineToFile(2, "EVENT = " + event.getEvent_name() + ";");
+								}
+								
+								writeLineToFile(1, "};");
+								
+								
+							}
+							catch(Exception exception)
+							{
+								System.out.println("ERROR! Can't write task '" + task.getTask_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!");
+								System.out.println("WARNING: Output directory may contain unusable files!");
+								System.exit(-1);
+							}
+							
+							System.out.println("Finished Task '" + task.getTask_name() + "'...");
+						}
+						
+						for(LEGOSAR.model.legosar.Task task : brick.getBrick_osek().getOsek_tasks())
+						{
+							System.out.println("Generating Counter for Task '" + task.getTask_name() + "'...");
+							
+							try
+							{
+								LEGOSAR.model.legosar.Alarm alarm = task.getTask_alarm();
+								
+								//Write counter declaration to OIL file.
+								//
+								writeLineToFile(0, "\n");
+								writeLineToFile(1, "COUNTER " + task.getTask_name() + "_counter");
+								writeLineToFile(1, "{");
+								writeLineToFile(2, "MINCYCLE = " + alarm.getAlarm_cycletime() + ";");
+								writeLineToFile(2, "MAXALLOWEDVALUE = " + alarm.getAlarm_cycletime() + ";");
+								writeLineToFile(2, "TICKPERBASE = 1;");
+								writeLineToFile(1, "};");
+							}
+							catch(Exception exception)
+							{
+								System.out.println("ERROR! Can't write Counter for Task '" + task.getTask_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!");
+								System.out.println("WARNING: Output directory may contain unusable files!");
+								System.exit(-1);
+							}
+							
+							System.out.println("Finished Counter for Task '" + task.getTask_name() + "'...");
+							
+							
+							// TO DO NEXT: ALARMS
+						}
+						
+						System.out.println("Finished Brick '" + brick.getBrick_name() + "'...");
 					}
 							
 					// CHANGED SECTION ENDS	
