@@ -300,11 +300,11 @@
 	<bundle bundleID="115" class="org.eclipse.debug.internal.ui.DebugUIPlugin" localization="plugin" name="%pluginName" provider="%providerName">
 		<library name="."/>
 	</bundle>
-	<bundle bundleID="571" class="LEGOSAR.model.legosar.presentation.LEGOSAREditorPlugin$Implementation" localization="plugin" name="%pluginName" provider="%providerName">
+	<bundle bundleID="571" localization="plugin" name="%pluginName" provider="%providerName">
 		<library name="."/>
 	</bundle>
 	<bundle bundleID="112" class="org.eclipse.core.variables.VariablesPlugin" localization="plugin" name="%pluginName" provider="%providerName"/>
-	<bundle bundleID="570" class="LEGOSAR.model.legosar.provider.LEGOSAREditPlugin$Implementation" localization="plugin" name="%pluginName" provider="%providerName">
+	<bundle bundleID="570" class="LEGOSAR.model.legosar.presentation.LEGOSAREditorPlugin$Implementation" localization="plugin" name="%pluginName" provider="%providerName">
 		<library name="."/>
 	</bundle>
 	<bundle bundleID="113" localization="plugin" name="%pluginName" provider="%providerName"/>
@@ -325,9 +325,6 @@
 		<library name="."/>
 	</bundle>
 	<bundle bundleID="430" localization="plugin" name="%osgiUtil" provider="%eclipse.org"/>
-	<bundle bundleID="572" localization="plugin" name="%pluginName" provider="%providerName">
-		<library name="."/>
-	</bundle>
 	<bundle bundleID="439" class="org.eclipse.pde.internal.junit.runtime.PDEJUnitRuntimePlugin" localization="plugin" name="%pluginName" provider="%providerName"/>
 	<bundle bundleID="437" class="org.eclipse.pde.internal.ds.core.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
 	<bundle bundleID="438" class="org.eclipse.pde.internal.ds.ui.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
@@ -412,7 +409,7 @@
 	<bundle bundleID="463" class="org.eclipse.rse.internal.services.dstore.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
 	<bundle bundleID="464" class="org.eclipse.rse.internal.services.files.ftp.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
 	<bundle bundleID="465" class="org.eclipse.rse.internal.services.local.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
-	<bundle bundleID="569" localization="plugin" name="%pluginName" provider="%providerName">
+	<bundle bundleID="569" class="LEGOSAR.model.legosar.provider.LEGOSAREditPlugin$Implementation" localization="plugin" name="%pluginName" provider="%providerName">
 		<library name="."/>
 	</bundle>
 	<bundle bundleID="466" class="org.eclipse.rse.internal.services.ssh.Activator" localization="plugin" name="%pluginName" provider="%providerName"/>
