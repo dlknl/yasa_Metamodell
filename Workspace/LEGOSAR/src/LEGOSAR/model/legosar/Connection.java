@@ -36,7 +36,7 @@ public interface Connection extends EObject {
 	 * @return the value of the '<em>Conn name</em>' attribute.
 	 * @see #setConn_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getConnection_Conn_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getConn_name();

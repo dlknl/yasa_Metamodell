@@ -288,7 +288,7 @@ public interface LegosarPackage extends EPackage {
 	int SENSOR = 6;
 
 	/**
-	 * The feature id for the '<em><b>Sensor port</b></em>' attribute list.
+	 * The feature id for the '<em><b>Sensor port</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -547,7 +547,7 @@ public interface LegosarPackage extends EPackage {
 	int TASK__TASK_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Task priority</b></em>' attribute list.
+	 * The feature id for the '<em><b>Task priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -584,7 +584,7 @@ public interface LegosarPackage extends EPackage {
 	int ALARM = 14;
 
 	/**
-	 * The feature id for the '<em><b>Alarm cycletime</b></em>' attribute list.
+	 * The feature id for the '<em><b>Alarm cycletime</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -879,10 +879,10 @@ public interface LegosarPackage extends EPackage {
 	EClass getSensor();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link LEGOSAR.model.legosar.Sensor#getSensor_port <em>Sensor port</em>}'.
+	 * Returns the meta object for the attribute '{@link LEGOSAR.model.legosar.Sensor#getSensor_port <em>Sensor port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Sensor port</em>'.
+	 * @return the meta object for the attribute '<em>Sensor port</em>'.
 	 * @see LEGOSAR.model.legosar.Sensor#getSensor_port()
 	 * @see #getSensor()
 	 * @generated
@@ -1081,10 +1081,10 @@ public interface LegosarPackage extends EPackage {
 	EAttribute getTask_Task_name();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link LEGOSAR.model.legosar.Task#getTask_priority <em>Task priority</em>}'.
+	 * Returns the meta object for the attribute '{@link LEGOSAR.model.legosar.Task#getTask_priority <em>Task priority</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Task priority</em>'.
+	 * @return the meta object for the attribute '<em>Task priority</em>'.
 	 * @see LEGOSAR.model.legosar.Task#getTask_priority()
 	 * @see #getTask()
 	 * @generated
@@ -1113,10 +1113,10 @@ public interface LegosarPackage extends EPackage {
 	EClass getAlarm();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link LEGOSAR.model.legosar.Alarm#getAlarm_cycletime <em>Alarm cycletime</em>}'.
+	 * Returns the meta object for the attribute '{@link LEGOSAR.model.legosar.Alarm#getAlarm_cycletime <em>Alarm cycletime</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Alarm cycletime</em>'.
+	 * @return the meta object for the attribute '<em>Alarm cycletime</em>'.
 	 * @see LEGOSAR.model.legosar.Alarm#getAlarm_cycletime()
 	 * @see #getAlarm()
 	 * @generated
@@ -1376,7 +1376,7 @@ public interface LegosarPackage extends EPackage {
 		EClass SENSOR = eINSTANCE.getSensor();
 
 		/**
-		 * The meta object literal for the '<em><b>Sensor port</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Sensor port</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1542,7 +1542,7 @@ public interface LegosarPackage extends EPackage {
 		EAttribute TASK__TASK_NAME = eINSTANCE.getTask_Task_name();
 
 		/**
-		 * The meta object literal for the '<em><b>Task priority</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Task priority</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1568,7 +1568,7 @@ public interface LegosarPackage extends EPackage {
 		EClass ALARM = eINSTANCE.getAlarm();
 
 		/**
-		 * The meta object literal for the '<em><b>Alarm cycletime</b></em>' attribute list feature.
+		 * The meta object literal for the '<em><b>Alarm cycletime</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated

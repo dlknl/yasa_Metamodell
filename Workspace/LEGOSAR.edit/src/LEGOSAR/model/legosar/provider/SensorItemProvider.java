@@ -103,7 +103,8 @@ public class SensorItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Sensor_type");
+		Sensor sensor = (Sensor)object;
+		return getString("_UI_Sensor_type") + " " + sensor.getSensor_port();
 	}
 
 	/**

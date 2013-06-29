@@ -24,19 +24,29 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Alarm extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Alarm cycletime</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Alarm cycletime</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Alarm cycletime</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Alarm cycletime</em>' attribute list.
+	 * @return the value of the '<em>Alarm cycletime</em>' attribute.
+	 * @see #setAlarm_cycletime(int)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getAlarm_Alarm_cycletime()
-	 * @model lower="10" upper="10000"
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getAlarm_cycletime();
+	int getAlarm_cycletime();
+
+	/**
+	 * Sets the value of the '{@link LEGOSAR.model.legosar.Alarm#getAlarm_cycletime <em>Alarm cycletime</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Alarm cycletime</em>' attribute.
+	 * @see #getAlarm_cycletime()
+	 * @generated
+	 */
+	void setAlarm_cycletime(int value);
 
 } // Alarm

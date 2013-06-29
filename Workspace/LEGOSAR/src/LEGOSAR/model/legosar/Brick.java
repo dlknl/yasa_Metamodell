@@ -39,7 +39,7 @@ public interface Brick extends EObject {
 	 * @return the value of the '<em>Brick name</em>' attribute.
 	 * @see #setBrick_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getBrick_Brick_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getBrick_name();
@@ -65,7 +65,7 @@ public interface Brick extends EObject {
 	 * @return the value of the '<em>Brick is Master</em>' attribute.
 	 * @see #setBrick_isMaster(boolean)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getBrick_Brick_isMaster()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	boolean isBrick_isMaster();
@@ -82,7 +82,7 @@ public interface Brick extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Brick bt addr</b></em>' attribute list.
-	 * The list contents are of type {@link byte}[].
+	 * The list contents are of type {@link java.lang.Integer}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Brick bt addr</em>' attribute list isn't clear,
@@ -91,10 +91,10 @@ public interface Brick extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Brick bt addr</em>' attribute list.
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getBrick_Brick_bt_addr()
-	 * @model upper="255"
+	 * @model unique="false" lower="7" upper="7"
 	 * @generated
 	 */
-	EList<byte[]> getBrick_bt_addr();
+	EList<Integer> getBrick_bt_addr();
 
 	/**
 	 * Returns the value of the '<em><b>Brick peripherals</b></em>' containment reference list.

@@ -31,7 +31,7 @@ public interface SenderReceiverPort extends Port {
 	 * @return the value of the '<em>Port datatype</em>' attribute.
 	 * @see #setPort_datatype(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getSenderReceiverPort_Port_datatype()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPort_datatype();

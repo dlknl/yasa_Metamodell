@@ -346,6 +346,17 @@ public class LegosarExample {
 							System.out.println("Finished Alarm for Task '" + task.getTask_name() + "'...");
 						}
 						
+						try
+						{
+							writeLineToFile(0, "};");
+						}
+						catch(Exception exception)
+						{
+							System.out.println("ERROR! Can't finish OIL file for Brick '" + brick.getBrick_name() + "'!");
+							System.out.println("WARNING: Output directory may contain unusable files!");
+							System.exit(-1);
+						}
+						
 						System.out.println("Finished Brick '" + brick.getBrick_name() + "'...");
 					}
 							

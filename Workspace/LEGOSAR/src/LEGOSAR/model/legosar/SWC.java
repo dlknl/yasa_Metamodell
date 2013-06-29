@@ -36,7 +36,7 @@ public interface SWC extends EObject {
 	 * @return the value of the '<em>Swc name</em>' attribute.
 	 * @see #setSwc_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getSWC_Swc_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getSwc_name();

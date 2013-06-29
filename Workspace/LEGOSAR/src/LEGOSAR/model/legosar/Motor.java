@@ -31,7 +31,7 @@ public interface Motor extends Peripheral {
 	 * @return the value of the '<em>Motor port</em>' attribute.
 	 * @see #setMotor_port(char)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getMotor_Motor_port()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	char getMotor_port();

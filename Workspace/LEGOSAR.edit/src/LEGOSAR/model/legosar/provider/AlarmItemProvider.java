@@ -106,7 +106,8 @@ public class AlarmItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Alarm_type");
+		Alarm alarm = (Alarm)object;
+		return getString("_UI_Alarm_type") + " " + alarm.getAlarm_cycletime();
 	}
 
 	/**

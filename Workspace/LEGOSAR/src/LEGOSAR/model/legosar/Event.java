@@ -32,7 +32,7 @@ public interface Event extends EObject {
 	 * @return the value of the '<em>Event name</em>' attribute.
 	 * @see #setEvent_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getEvent_Event_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getEvent_name();

@@ -58,14 +58,24 @@ public class TaskImpl extends EObjectImpl implements Task {
 	protected String task_name = TASK_NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getTask_priority() <em>Task priority</em>}' attribute list.
+	 * The default value of the '{@link #getTask_priority() <em>Task priority</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getTask_priority()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> task_priority;
+	protected static final int TASK_PRIORITY_EDEFAULT = 0;
+
+	/**
+	 * The cached value of the '{@link #getTask_priority() <em>Task priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTask_priority()
+	 * @generated
+	 * @ordered
+	 */
+	protected int task_priority = TASK_PRIORITY_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getTask_alarm() <em>Task alarm</em>}' containment reference.
@@ -122,11 +132,20 @@ public class TaskImpl extends EObjectImpl implements Task {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getTask_priority() {
-		if (task_priority == null) {
-			task_priority = new EDataTypeUniqueEList<Integer>(Integer.class, this, LegosarPackage.TASK__TASK_PRIORITY);
-		}
+	public int getTask_priority() {
 		return task_priority;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTask_priority(int newTask_priority) {
+		int oldTask_priority = task_priority;
+		task_priority = newTask_priority;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegosarPackage.TASK__TASK_PRIORITY, oldTask_priority, task_priority));
 	}
 
 	/**
@@ -217,8 +236,7 @@ public class TaskImpl extends EObjectImpl implements Task {
 				setTask_name((String)newValue);
 				return;
 			case LegosarPackage.TASK__TASK_PRIORITY:
-				getTask_priority().clear();
-				getTask_priority().addAll((Collection<? extends Integer>)newValue);
+				setTask_priority((Integer)newValue);
 				return;
 			case LegosarPackage.TASK__TASK_ALARM:
 				setTask_alarm((Alarm)newValue);
@@ -239,7 +257,7 @@ public class TaskImpl extends EObjectImpl implements Task {
 				setTask_name(TASK_NAME_EDEFAULT);
 				return;
 			case LegosarPackage.TASK__TASK_PRIORITY:
-				getTask_priority().clear();
+				setTask_priority(TASK_PRIORITY_EDEFAULT);
 				return;
 			case LegosarPackage.TASK__TASK_ALARM:
 				setTask_alarm((Alarm)null);
@@ -259,7 +277,7 @@ public class TaskImpl extends EObjectImpl implements Task {
 			case LegosarPackage.TASK__TASK_NAME:
 				return TASK_NAME_EDEFAULT == null ? task_name != null : !TASK_NAME_EDEFAULT.equals(task_name);
 			case LegosarPackage.TASK__TASK_PRIORITY:
-				return task_priority != null && !task_priority.isEmpty();
+				return task_priority != TASK_PRIORITY_EDEFAULT;
 			case LegosarPackage.TASK__TASK_ALARM:
 				return task_alarm != null;
 		}

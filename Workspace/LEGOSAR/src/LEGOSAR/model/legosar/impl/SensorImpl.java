@@ -7,10 +7,12 @@ import LEGOSAR.model.legosar.Sensor;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 /**
@@ -28,14 +30,23 @@ import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
  */
 public class SensorImpl extends PeripheralImpl implements Sensor {
 	/**
-	 * The cached value of the '{@link #getSensor_port() <em>Sensor port</em>}' attribute list.
+	 * The default value of the '{@link #getSensor_port() <em>Sensor port</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getSensor_port()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Integer> sensor_port;
+	protected static final int SENSOR_PORT_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getSensor_port() <em>Sensor port</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSensor_port()
+	 * @generated
+	 * @ordered
+	 */
+	protected int sensor_port = SENSOR_PORT_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,11 +72,20 @@ public class SensorImpl extends PeripheralImpl implements Sensor {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Integer> getSensor_port() {
-		if (sensor_port == null) {
-			sensor_port = new EDataTypeUniqueEList<Integer>(Integer.class, this, LegosarPackage.SENSOR__SENSOR_PORT);
-		}
+	public int getSensor_port() {
 		return sensor_port;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSensor_port(int newSensor_port) {
+		int oldSensor_port = sensor_port;
+		sensor_port = newSensor_port;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegosarPackage.SENSOR__SENSOR_PORT, oldSensor_port, sensor_port));
 	}
 
 	/**
@@ -92,8 +112,7 @@ public class SensorImpl extends PeripheralImpl implements Sensor {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case LegosarPackage.SENSOR__SENSOR_PORT:
-				getSensor_port().clear();
-				getSensor_port().addAll((Collection<? extends Integer>)newValue);
+				setSensor_port((Integer)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -108,7 +127,7 @@ public class SensorImpl extends PeripheralImpl implements Sensor {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case LegosarPackage.SENSOR__SENSOR_PORT:
-				getSensor_port().clear();
+				setSensor_port(SENSOR_PORT_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -123,7 +142,7 @@ public class SensorImpl extends PeripheralImpl implements Sensor {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case LegosarPackage.SENSOR__SENSOR_PORT:
-				return sensor_port != null && !sensor_port.isEmpty();
+				return sensor_port != SENSOR_PORT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}

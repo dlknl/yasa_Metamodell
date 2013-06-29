@@ -32,7 +32,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Port name</em>' attribute.
 	 * @see #setPort_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getPort_Port_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getPort_name();

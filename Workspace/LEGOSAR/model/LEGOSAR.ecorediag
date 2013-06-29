@@ -390,6 +390,18 @@
     <element xsi:nil="true"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WVUrs93WEeK0prILCroZjw" x="-290" y="-160"/>
   </children>
+  <children xmi:type="notation:Shape" xmi:id="_IXohMODpEeKl9fwf39wIOA" type="Note" fontName="Segoe UI" fontHeight="10" italic="true" description="The &quot;Advanced&quot; Property&#xD;&#xA;&quot;Unique&quot; of brick_bt_addr&#xD;&#xA;must be set to &quot;false&quot;!" fillColor="13369343" transparency="0" lineColor="6737151" lineWidth="1">
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_IXsLkODpEeKl9fwf39wIOA" type="DiagramName">
+      <element xsi:nil="true"/>
+    </children>
+    <children xmi:type="notation:BasicDecorationNode" xmi:id="_IXsLkeDpEeKl9fwf39wIOA" type="Description">
+      <element xsi:nil="true"/>
+    </children>
+    <styles xmi:type="notation:TextStyle" xmi:id="_IXohMeDpEeKl9fwf39wIOA"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_IXohMuDpEeKl9fwf39wIOA"/>
+    <element xsi:nil="true"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IXohM-DpEeKl9fwf39wIOA" x="65" y="-140"/>
+  </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="_ILEOcd3AEeK0prILCroZjw"/>
   <element xmi:type="ecore:EPackage" href="LEGOSAR.ecore#/"/>
   <edges xmi:type="notation:Edge" xmi:id="_s68PsN3AEeK0prILCroZjw" type="3002" source="_OtTzcN3AEeK0prILCroZjw" target="_Z1JqkN3AEeK0prILCroZjw">
@@ -654,5 +666,13 @@
     <element xmi:type="ecore:EReference" href="LEGOSAR.ecore#//Runnable/runnable_task"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_F_o-E93TEeK0prILCroZjw" points="[0, 9, 415, -74]$[0, 158, 415, 75]$[-405, 158, 10, 75]$[-405, 116, 10, 33]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_F_vEsN3TEeK0prILCroZjw" id="(0.3216374269005848,0.8235294117647058)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_R8NOwODpEeKl9fwf39wIOA" type="NoteAttachment" source="_IXohMODpEeKl9fwf39wIOA" target="_VM5QkN3BEeK0prILCroZjw" lineWidth="1">
+    <styles xmi:type="notation:ArrowStyle" xmi:id="_R8N10ODpEeKl9fwf39wIOA"/>
+    <styles xmi:type="notation:LineTypeStyle" xmi:id="_R8N10eDpEeKl9fwf39wIOA"/>
+    <element xsi:nil="true"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_R8N10uDpEeKl9fwf39wIOA" points="[0, 0, 21, 119]$[68, -110, 89, 9]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_R8QSEODpEeKl9fwf39wIOA" id="(0.26666666666666666,0.0)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_SYvZwODpEeKl9fwf39wIOA" id="(0.6111111111111112,0.9176470588235294)"/>
   </edges>
 </notation:Diagram>

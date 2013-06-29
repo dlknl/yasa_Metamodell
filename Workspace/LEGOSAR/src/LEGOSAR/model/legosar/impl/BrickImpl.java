@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.eclipse.emf.ecore.util.EDataTypeEList;
 import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
@@ -93,7 +94,7 @@ public class BrickImpl extends EObjectImpl implements Brick {
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<byte[]> brick_bt_addr;
+	protected EList<Integer> brick_bt_addr;
 
 	/**
 	 * The cached value of the '{@link #getBrick_peripherals() <em>Brick peripherals</em>}' containment reference list.
@@ -191,9 +192,9 @@ public class BrickImpl extends EObjectImpl implements Brick {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<byte[]> getBrick_bt_addr() {
+	public EList<Integer> getBrick_bt_addr() {
 		if (brick_bt_addr == null) {
-			brick_bt_addr = new EDataTypeUniqueEList<byte[]>(byte[].class, this, LegosarPackage.BRICK__BRICK_BT_ADDR);
+			brick_bt_addr = new EDataTypeEList<Integer>(Integer.class, this, LegosarPackage.BRICK__BRICK_BT_ADDR);
 		}
 		return brick_bt_addr;
 	}
@@ -322,7 +323,7 @@ public class BrickImpl extends EObjectImpl implements Brick {
 				return;
 			case LegosarPackage.BRICK__BRICK_BT_ADDR:
 				getBrick_bt_addr().clear();
-				getBrick_bt_addr().addAll((Collection<? extends byte[]>)newValue);
+				getBrick_bt_addr().addAll((Collection<? extends Integer>)newValue);
 				return;
 			case LegosarPackage.BRICK__BRICK_PERIPHERALS:
 				getBrick_peripherals().clear();

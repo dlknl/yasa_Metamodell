@@ -36,7 +36,7 @@ public interface Runnable extends EObject {
 	 * @return the value of the '<em>Runnable name</em>' attribute.
 	 * @see #setRunnable_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getRunnable_Runnable_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getRunnable_name();

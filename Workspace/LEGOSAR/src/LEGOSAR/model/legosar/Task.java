@@ -36,7 +36,7 @@ public interface Task extends EObject {
 	 * @return the value of the '<em>Task name</em>' attribute.
 	 * @see #setTask_name(String)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getTask_Task_name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getTask_name();
@@ -52,20 +52,30 @@ public interface Task extends EObject {
 	void setTask_name(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Task priority</b></em>' attribute list.
-	 * The list contents are of type {@link java.lang.Integer}.
+	 * Returns the value of the '<em><b>Task priority</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Task priority</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Task priority</em>' attribute list.
+	 * @return the value of the '<em>Task priority</em>' attribute.
+	 * @see #setTask_priority(int)
 	 * @see LEGOSAR.model.legosar.LegosarPackage#getTask_Task_priority()
-	 * @model required="true" upper="20"
+	 * @model required="true"
 	 * @generated
 	 */
-	EList<Integer> getTask_priority();
+	int getTask_priority();
+
+	/**
+	 * Sets the value of the '{@link LEGOSAR.model.legosar.Task#getTask_priority <em>Task priority</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Task priority</em>' attribute.
+	 * @see #getTask_priority()
+	 * @generated
+	 */
+	void setTask_priority(int value);
 
 	/**
 	 * Returns the value of the '<em><b>Task alarm</b></em>' containment reference.
