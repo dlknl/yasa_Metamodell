@@ -1,4 +1,4 @@
-activeuserprofiles=Satellite;Team
+activeuserprofiles=No-Name;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Reinhard
-useridperkey=Satellite.Local\=Reinhard;
+useridperkey=No-Name.Local\=Reinhard;
