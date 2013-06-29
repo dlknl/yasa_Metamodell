@@ -246,31 +246,16 @@ public class LegosarExample {
 								writeLineToFile(2, "SCHEDULE = FULL;");
 								writeLineToFile(2, "STACKSIZE = 512;");
 								
-								for(LEGOSAR.model.legosar.SWC swc : brick.getBrick_swcs())
+								for(LEGOSAR.model.legosar.Event event : brick.getBrick_osek().getOsek_events())
 								{
-									for(LEGOSAR.model.legosar.Runnable runnable : swc.getSwc_runnables())
-									{
-										if(runnable.getRunnable_task() == task)
-										{
-											for(LEGOSAR.model.legosar.Event event : runnable.getRunnable_events())
-											{
-												System.out.println("Linking Event '" + event.getEvent_name() + "' to Task '" + task.getTask_name() + "'...");
-												
-												try
-												{
-													writeLineToFile(2, "EVENT = " + event.getEvent_name() + ";");
-												}
-												catch(Exception exception)
-												{
-													System.out.println("ERROR! Can't link event '" + event.getEvent_name() + "to task '" + task.getTask_name() + "'!");
-													System.out.println("WARNING: Output directory may contain unusable files!");
-													System.exit(-1);
-												}
-											}
-										}
-									}
-								}							
+									System.out.println("Adding Event '" + event.getEvent_name() + "' to Task '" + task.getTask_name() + "'...");
+									
+									writeLineToFile(2, "EVENT = " + event.getEvent_name() + ";");
+								}
+								
 								writeLineToFile(1, "};");
+								
+								
 							}
 							catch(Exception exception)
 							{

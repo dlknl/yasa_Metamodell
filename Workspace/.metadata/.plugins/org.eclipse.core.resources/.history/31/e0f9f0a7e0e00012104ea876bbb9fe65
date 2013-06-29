@@ -271,6 +271,8 @@ public class LegosarExample {
 									}
 								}							
 								writeLineToFile(1, "};");
+								
+								
 							}
 							catch(Exception exception)
 							{

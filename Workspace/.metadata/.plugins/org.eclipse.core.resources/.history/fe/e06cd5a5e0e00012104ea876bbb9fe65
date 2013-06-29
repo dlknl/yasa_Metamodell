@@ -269,8 +269,24 @@ public class LegosarExample {
 											}
 										}
 									}
-								}							
+								}
+								
+								
+								
+								
+								
+								
+								
+								for(LEGOSAR.model.legosar.Event event : brick.getBrick_osek().getOsek_events())
+								{
+									System.out.println("Adding Event '" + event.getEvent_name() + "' to Task '" + task.getTask_name() + "'...");
+									
+									writeLineToFile(2, "EVENT = " + event.getEvent_name() + ";");
+								}
+								
 								writeLineToFile(1, "};");
+								
+								
 							}
 							catch(Exception exception)
 							{
