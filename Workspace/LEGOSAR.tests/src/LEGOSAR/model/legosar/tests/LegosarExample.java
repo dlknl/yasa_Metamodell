@@ -156,7 +156,7 @@ public class LegosarExample {
 						
 						try
 						{
-							System.out.println("Creating OIL file for Brick'" + brick.getBrick_name() + "'...");
+							System.out.println("Creating OIL file for Brick '" + brick.getBrick_name() + "'...");
 							
 							// Create new OIL file.
 							//
@@ -293,9 +293,42 @@ public class LegosarExample {
 							}
 							
 							System.out.println("Finished Counter for Task '" + task.getTask_name() + "'...");
+						}
+						
+						for(LEGOSAR.model.legosar.Task task : brick.getBrick_osek().getOsek_tasks())
+						{
+							System.out.println("Generating Alarm for Task '" + task.getTask_name() + "'...");
 							
+							try
+							{
+								LEGOSAR.model.legosar.Alarm alarm = task.getTask_alarm();
+								
+								//Write alarm declaration to OIL file.
+								//
+								writeLineToFile(0, "\n");
+								writeLineToFile(1, "ALARM " + task.getTask_name() + "_alarm");
+								writeLineToFile(1, "{");
+								writeLineToFile(2, "COUNTER = " + task.getTask_name() + "_counter;");
+								writeLineToFile(2, "ACTION = ACTIVATETASK");
+								writeLineToFile(2, "{");
+								writeLineToFile(3, "TASK = " + task.getTask_name() + ";");
+								writeLineToFile(2, "};");
+								writeLineToFile(2, "AUTOSTART = TRUE");
+								writeLineToFile(2, "{");
+								writeLineToFile(3, "ALARMTIME = " + alarm.getAlarm_cycletime() + ";");
+								writeLineToFile(3, "CYCLETIME = " + alarm.getAlarm_cycletime() + ";");
+								writeLineToFile(3, "APPMODE = appmode1;");
+								writeLineToFile(2, "};");
+								writeLineToFile(1, "};");
+							}
+							catch(Exception exception)
+							{
+								System.out.println("ERROR! Can't write Alarm for Task '" + task.getTask_name() + "' to OIL file for Brick '" + brick.getBrick_name() + "'!");
+								System.out.println("WARNING: Output directory may contain unusable files!");
+								System.exit(-1);
+							}
 							
-							// TO DO NEXT: ALARMS
+							System.out.println("Finished Alarm for Task '" + task.getTask_name() + "'...");
 						}
 						
 						System.out.println("Finished Brick '" + brick.getBrick_name() + "'...");

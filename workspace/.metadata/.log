@@ -42,3 +42,6 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.osgi 2 1 2013-06-29 16:37:32.664
+!MESSAGE NLS missing message: ToggleFocusAction_Focus in: org.eclipse.mylyn.internal.modeling.ui.actions.messages
