@@ -53,18 +53,15 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="conn_source" lowerBound="1"
         eType="#//Port"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="conn_destinations" lowerBound="1"
-        upperBound="-1" eType="#//Port"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="conn_destination" lowerBound="1"
+        eType="#//Port"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="port_name" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TriggerPort" eSuperTypes="#//Port"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SenderReceiverPort" eSuperTypes="#//Port">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port_datatype" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SenderReceiverPort" eSuperTypes="#//Port"/>
   <eClassifiers xsi:type="ecore:EClass" name="OSEKSystem">
     <eStructuralFeatures xsi:type="ecore:EReference" name="osek_tasks" lowerBound="1"
         upperBound="-1" eType="#//Task" containment="true"/>

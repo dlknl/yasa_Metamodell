@@ -462,7 +462,7 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnection_Conn_destinations() {
+	public EReference getConnection_Conn_destination() {
 		return (EReference)connectionEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -500,15 +500,6 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 	 */
 	public EClass getSenderReceiverPort() {
 		return senderReceiverPortEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getSenderReceiverPort_Port_datatype() {
-		return (EAttribute)senderReceiverPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -709,7 +700,7 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 		connectionEClass = createEClass(CONNECTION);
 		createEAttribute(connectionEClass, CONNECTION__CONN_NAME);
 		createEReference(connectionEClass, CONNECTION__CONN_SOURCE);
-		createEReference(connectionEClass, CONNECTION__CONN_DESTINATIONS);
+		createEReference(connectionEClass, CONNECTION__CONN_DESTINATION);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__PORT_NAME);
@@ -717,7 +708,6 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 		triggerPortEClass = createEClass(TRIGGER_PORT);
 
 		senderReceiverPortEClass = createEClass(SENDER_RECEIVER_PORT);
-		createEAttribute(senderReceiverPortEClass, SENDER_RECEIVER_PORT__PORT_DATATYPE);
 
 		osekSystemEClass = createEClass(OSEK_SYSTEM);
 		createEReference(osekSystemEClass, OSEK_SYSTEM__OSEK_TASKS);
@@ -809,7 +799,7 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 		initEClass(connectionEClass, Connection.class, "Connection", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getConnection_Conn_name(), ecorePackage.getEString(), "conn_name", null, 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnection_Conn_source(), this.getPort(), null, "conn_source", null, 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnection_Conn_destinations(), this.getPort(), null, "conn_destinations", null, 1, -1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnection_Conn_destination(), this.getPort(), null, "conn_destination", null, 1, 1, Connection.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Port_name(), ecorePackage.getEString(), "port_name", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -817,7 +807,6 @@ public class LegosarPackageImpl extends EPackageImpl implements LegosarPackage {
 		initEClass(triggerPortEClass, TriggerPort.class, "TriggerPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(senderReceiverPortEClass, SenderReceiverPort.class, "SenderReceiverPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getSenderReceiverPort_Port_datatype(), ecorePackage.getEString(), "port_datatype", null, 1, 1, SenderReceiverPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(osekSystemEClass, OSEKSystem.class, "OSEKSystem", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getOSEKSystem_Osek_tasks(), this.getTask(), null, "osek_tasks", null, 1, -1, OSEKSystem.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

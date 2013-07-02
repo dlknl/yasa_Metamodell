@@ -29,7 +29,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * <ul>
  *   <li>{@link LEGOSAR.model.legosar.impl.ConnectionImpl#getConn_name <em>Conn name</em>}</li>
  *   <li>{@link LEGOSAR.model.legosar.impl.ConnectionImpl#getConn_source <em>Conn source</em>}</li>
- *   <li>{@link LEGOSAR.model.legosar.impl.ConnectionImpl#getConn_destinations <em>Conn destinations</em>}</li>
+ *   <li>{@link LEGOSAR.model.legosar.impl.ConnectionImpl#getConn_destination <em>Conn destination</em>}</li>
  * </ul>
  * </p>
  *
@@ -67,14 +67,14 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 	protected Port conn_source;
 
 	/**
-	 * The cached value of the '{@link #getConn_destinations() <em>Conn destinations</em>}' reference list.
+	 * The cached value of the '{@link #getConn_destination() <em>Conn destination</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getConn_destinations()
+	 * @see #getConn_destination()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> conn_destinations;
+	protected Port conn_destination;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -159,11 +159,37 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getConn_destinations() {
-		if (conn_destinations == null) {
-			conn_destinations = new EObjectResolvingEList<Port>(Port.class, this, LegosarPackage.CONNECTION__CONN_DESTINATIONS);
+	public Port getConn_destination() {
+		if (conn_destination != null && conn_destination.eIsProxy()) {
+			InternalEObject oldConn_destination = (InternalEObject)conn_destination;
+			conn_destination = (Port)eResolveProxy(oldConn_destination);
+			if (conn_destination != oldConn_destination) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, LegosarPackage.CONNECTION__CONN_DESTINATION, oldConn_destination, conn_destination));
+			}
 		}
-		return conn_destinations;
+		return conn_destination;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Port basicGetConn_destination() {
+		return conn_destination;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setConn_destination(Port newConn_destination) {
+		Port oldConn_destination = conn_destination;
+		conn_destination = newConn_destination;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, LegosarPackage.CONNECTION__CONN_DESTINATION, oldConn_destination, conn_destination));
 	}
 
 	/**
@@ -179,8 +205,9 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 			case LegosarPackage.CONNECTION__CONN_SOURCE:
 				if (resolve) return getConn_source();
 				return basicGetConn_source();
-			case LegosarPackage.CONNECTION__CONN_DESTINATIONS:
-				return getConn_destinations();
+			case LegosarPackage.CONNECTION__CONN_DESTINATION:
+				if (resolve) return getConn_destination();
+				return basicGetConn_destination();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -200,9 +227,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 			case LegosarPackage.CONNECTION__CONN_SOURCE:
 				setConn_source((Port)newValue);
 				return;
-			case LegosarPackage.CONNECTION__CONN_DESTINATIONS:
-				getConn_destinations().clear();
-				getConn_destinations().addAll((Collection<? extends Port>)newValue);
+			case LegosarPackage.CONNECTION__CONN_DESTINATION:
+				setConn_destination((Port)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -222,8 +248,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 			case LegosarPackage.CONNECTION__CONN_SOURCE:
 				setConn_source((Port)null);
 				return;
-			case LegosarPackage.CONNECTION__CONN_DESTINATIONS:
-				getConn_destinations().clear();
+			case LegosarPackage.CONNECTION__CONN_DESTINATION:
+				setConn_destination((Port)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -241,8 +267,8 @@ public class ConnectionImpl extends EObjectImpl implements Connection {
 				return CONN_NAME_EDEFAULT == null ? conn_name != null : !CONN_NAME_EDEFAULT.equals(conn_name);
 			case LegosarPackage.CONNECTION__CONN_SOURCE:
 				return conn_source != null;
-			case LegosarPackage.CONNECTION__CONN_DESTINATIONS:
-				return conn_destinations != null && !conn_destinations.isEmpty();
+			case LegosarPackage.CONNECTION__CONN_DESTINATION:
+				return conn_destination != null;
 		}
 		return super.eIsSet(featureID);
 	}

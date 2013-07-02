@@ -42,7 +42,7 @@ public class LegosarFactoryImpl extends EFactoryImpl implements LegosarFactory {
 	 */
 	public static LegosarFactory init() {
 		try {
-			LegosarFactory theLegosarFactory = (LegosarFactory)EPackage.Registry.INSTANCE.getEFactory(LegosarPackage.eNS_URI);
+			LegosarFactory theLegosarFactory = (LegosarFactory)EPackage.Registry.INSTANCE.getEFactory("http://legosar/1.0"); 
 			if (theLegosarFactory != null) {
 				return theLegosarFactory;
 			}

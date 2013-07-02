@@ -380,13 +380,13 @@ public interface LegosarPackage extends EPackage {
 	int CONNECTION__CONN_SOURCE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Conn destinations</b></em>' reference list.
+	 * The feature id for the '<em><b>Conn destination</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTION__CONN_DESTINATIONS = 2;
+	int CONNECTION__CONN_DESTINATION = 2;
 
 	/**
 	 * The number of structural features of the '<em>Connection</em>' class.
@@ -473,22 +473,13 @@ public interface LegosarPackage extends EPackage {
 	int SENDER_RECEIVER_PORT__PORT_NAME = PORT__PORT_NAME;
 
 	/**
-	 * The feature id for the '<em><b>Port datatype</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SENDER_RECEIVER_PORT__PORT_DATATYPE = PORT_FEATURE_COUNT + 0;
-
-	/**
 	 * The number of structural features of the '<em>Sender Receiver Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SENDER_RECEIVER_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
+	int SENDER_RECEIVER_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link LEGOSAR.model.legosar.impl.OSEKSystemImpl <em>OSEK System</em>}' class.
@@ -965,15 +956,15 @@ public interface LegosarPackage extends EPackage {
 	EReference getConnection_Conn_source();
 
 	/**
-	 * Returns the meta object for the reference list '{@link LEGOSAR.model.legosar.Connection#getConn_destinations <em>Conn destinations</em>}'.
+	 * Returns the meta object for the reference '{@link LEGOSAR.model.legosar.Connection#getConn_destination <em>Conn destination</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Conn destinations</em>'.
-	 * @see LEGOSAR.model.legosar.Connection#getConn_destinations()
+	 * @return the meta object for the reference '<em>Conn destination</em>'.
+	 * @see LEGOSAR.model.legosar.Connection#getConn_destination()
 	 * @see #getConnection()
 	 * @generated
 	 */
-	EReference getConnection_Conn_destinations();
+	EReference getConnection_Conn_destination();
 
 	/**
 	 * Returns the meta object for class '{@link LEGOSAR.model.legosar.Port <em>Port</em>}'.
@@ -1015,17 +1006,6 @@ public interface LegosarPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getSenderReceiverPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link LEGOSAR.model.legosar.SenderReceiverPort#getPort_datatype <em>Port datatype</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Port datatype</em>'.
-	 * @see LEGOSAR.model.legosar.SenderReceiverPort#getPort_datatype()
-	 * @see #getSenderReceiverPort()
-	 * @generated
-	 */
-	EAttribute getSenderReceiverPort_Port_datatype();
 
 	/**
 	 * Returns the meta object for class '{@link LEGOSAR.model.legosar.OSEKSystem <em>OSEK System</em>}'.
@@ -1444,12 +1424,12 @@ public interface LegosarPackage extends EPackage {
 		EReference CONNECTION__CONN_SOURCE = eINSTANCE.getConnection_Conn_source();
 
 		/**
-		 * The meta object literal for the '<em><b>Conn destinations</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Conn destination</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTION__CONN_DESTINATIONS = eINSTANCE.getConnection_Conn_destinations();
+		EReference CONNECTION__CONN_DESTINATION = eINSTANCE.getConnection_Conn_destination();
 
 		/**
 		 * The meta object literal for the '{@link LEGOSAR.model.legosar.impl.PortImpl <em>Port</em>}' class.
@@ -1488,14 +1468,6 @@ public interface LegosarPackage extends EPackage {
 		 * @generated
 		 */
 		EClass SENDER_RECEIVER_PORT = eINSTANCE.getSenderReceiverPort();
-
-		/**
-		 * The meta object literal for the '<em><b>Port datatype</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute SENDER_RECEIVER_PORT__PORT_DATATYPE = eINSTANCE.getSenderReceiverPort_Port_datatype();
 
 		/**
 		 * The meta object literal for the '{@link LEGOSAR.model.legosar.impl.OSEKSystemImpl <em>OSEK System</em>}' class.

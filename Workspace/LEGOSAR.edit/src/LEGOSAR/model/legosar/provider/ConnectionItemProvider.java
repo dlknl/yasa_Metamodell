@@ -62,7 +62,7 @@ public class ConnectionItemProvider
 
 			addConn_namePropertyDescriptor(object);
 			addConn_sourcePropertyDescriptor(object);
-			addConn_destinationsPropertyDescriptor(object);
+			addConn_destinationPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -112,19 +112,19 @@ public class ConnectionItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Conn destinations feature.
+	 * This adds a property descriptor for the Conn destination feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addConn_destinationsPropertyDescriptor(Object object) {
+	protected void addConn_destinationPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Connection_conn_destinations_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Connection_conn_destinations_feature", "_UI_Connection_type"),
-				 LegosarPackage.Literals.CONNECTION__CONN_DESTINATIONS,
+				 getString("_UI_Connection_conn_destination_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Connection_conn_destination_feature", "_UI_Connection_type"),
+				 LegosarPackage.Literals.CONNECTION__CONN_DESTINATION,
 				 true,
 				 false,
 				 true,

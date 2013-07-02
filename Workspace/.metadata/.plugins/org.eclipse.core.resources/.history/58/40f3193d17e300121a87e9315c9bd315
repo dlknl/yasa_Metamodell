@@ -1,0 +1,68 @@
+#
+
+pluginName = LEGOSAR Edit Support
+providerName = www.example.org
+
+_UI_CreateChild_text = {0}
+_UI_CreateChild_text2 = {1} {0}
+_UI_CreateChild_text3 = {1}
+_UI_CreateChild_tooltip = Create New {0} Under {1} Feature
+_UI_CreateChild_description = Create a new child of type {0} for the {1} feature of the selected {2}.
+_UI_CreateSibling_description = Create a new sibling of type {0} for the selected {2}, under the {1} feature of their parent.
+
+_UI_PropertyDescriptor_description = The {0} of the {1}
+
+_UI_LEGOSARSystem_type = LEGOSAR System
+_UI_Hardware_type = Hardware
+_UI_Software_type = Software
+_UI_Brick_type = Brick
+_UI_Peripheral_type = Peripheral
+_UI_Motor_type = Motor
+_UI_Sensor_type = Sensor
+_UI_SWC_type = SWC
+_UI_Connection_type = Connection
+_UI_Port_type = Port
+_UI_TriggerPort_type = Trigger Port
+_UI_SenderReceiverPort_type = Sender Receiver Port
+_UI_OSEKSystem_type = OSEK System
+_UI_Task_type = Task
+_UI_Alarm_type = Alarm
+_UI_Event_type = Event
+_UI_Runnable_type = Runnable
+_UI_Unknown_type = Object
+
+_UI_Unknown_datatype= Value
+
+_UI_LEGOSARSystem_system_hw_feature = System hw
+_UI_LEGOSARSystem_system_sw_feature = System sw
+_UI_Hardware_hw_bricks_feature = Hw bricks
+_UI_Software_sw_swcs_feature = Sw swcs
+_UI_Software_sw_connections_feature = Sw connections
+_UI_Brick_brick_name_feature = Brick name
+_UI_Brick_brick_isMaster_feature = Brick is Master
+_UI_Brick_brick_bt_addr_feature = Brick bt addr
+_UI_Brick_brick_peripherals_feature = Brick peripherals
+_UI_Brick_brick_osek_feature = Brick osek
+_UI_Brick_brick_swcs_feature = Brick swcs
+_UI_Motor_motor_port_feature = Motor port
+_UI_Sensor_sensor_port_feature = Sensor port
+_UI_SWC_swc_name_feature = Swc name
+_UI_SWC_swc_ports_feature = Swc ports
+_UI_SWC_swc_runnables_feature = Swc runnables
+_UI_Connection_conn_name_feature = Conn name
+_UI_Connection_conn_source_feature = Conn source
+_UI_Connection_conn_destinations_feature = Conn destinations
+_UI_Port_port_name_feature = Port name
+_UI_SenderReceiverPort_port_datatype_feature = Port datatype
+_UI_OSEKSystem_osek_tasks_feature = Osek tasks
+_UI_OSEKSystem_osek_events_feature = Osek events
+_UI_Task_task_name_feature = Task name
+_UI_Task_task_priority_feature = Task priority
+_UI_Task_task_alarm_feature = Task alarm
+_UI_Alarm_alarm_cycletime_feature = Alarm cycletime
+_UI_Event_event_name_feature = Event name
+_UI_Runnable_runnable_name_feature = Runnable name
+_UI_Runnable_runnable_events_feature = Runnable events
+_UI_Runnable_runnable_task_feature = Runnable task
+_UI_Unknown_feature = Unspecified
+

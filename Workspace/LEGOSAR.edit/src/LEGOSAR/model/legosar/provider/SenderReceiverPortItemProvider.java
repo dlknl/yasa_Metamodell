@@ -57,31 +57,8 @@ public class SenderReceiverPortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addPort_datatypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Port datatype feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPort_datatypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_SenderReceiverPort_port_datatype_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_SenderReceiverPort_port_datatype_feature", "_UI_SenderReceiverPort_type"),
-				 LegosarPackage.Literals.SENDER_RECEIVER_PORT__PORT_DATATYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
 	}
 
 	/**
@@ -119,12 +96,6 @@ public class SenderReceiverPortItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(SenderReceiverPort.class)) {
-			case LegosarPackage.SENDER_RECEIVER_PORT__PORT_DATATYPE:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

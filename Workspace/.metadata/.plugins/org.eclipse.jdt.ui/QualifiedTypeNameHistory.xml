@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="LEGOSAR.model.legosar.Event"/>
-<fullyQualifiedTypeName name="LEGOSAR.model.legosar.Task"/>
+<fullyQualifiedTypeName name="LEGOSAR.model.legosar.Runnable"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="LEGOSAR.model.legosar.SWC"/>
+<fullyQualifiedTypeName name="LEGOSAR.model.legosar.Port"/>
+<fullyQualifiedTypeName name="LEGOSAR.model.legosar.Connection"/>
 </qualifiedTypeNameHistroy>
